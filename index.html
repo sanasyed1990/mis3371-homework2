@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FirstLine Health - Patient Registration</title>
+<link rel="stylesheet" href="style.css">
+
+<script>
+window.onload = function() {
+    const dateElement = document.getElementById("currentDate");
+    const today = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    dateElement.innerHTML = today.toLocaleDateString(undefined, options);
+};
+</script>
+</head>
+
+<body>
+
+<div id="header">
+    <div class="header-left">
+        <img src="logo.png" alt="FLH Logo" class="logo">
+    </div>
+
+    <div class="header-center">
+        <h1>FirstLine Health</h1>
+    </div>
+
+    <div class="header-right" id="currentDate"></div>
+</div>
+
+<div id="main">
+
+<h2>Patient Registration Form</h2>
+
+<form action="thankyou.html" onsubmit="return validatePassword()">
+
+<table>
+
+<tr>
+<td>First Name:</td>
+<td><input type="text" id="firstName" maxlength="30" required></td>
+
+<td>Middle Initial:</td>
+<td><input type="text" maxlength="1"></td>
+
+<td>Last Name:</td>
+<td><input type="text" id="lastName" maxlength="30" required></td>
+</tr>
+
+<tr>
+<td>Date of Birth:</td>
+<td><input type="text" placeholder="MM/DD/YYYY" required></td>
+
+<td>Social Security:</td>
+<td><input type="password" maxlength="11" required></td>
+</tr>
+
+<tr>
+<td>Address Line 1:</td>
+<td><input type="text" maxlength="30" required></td>
+
+<td>Address Line 2:</td>
+<td><input type="text" maxlength="30"></td>
+</tr>
+
+<tr>
+<td>City:</td>
+<td><input type="text" maxlength="30" required></td>
+
+<td>State:</td>
+<td>
+<select required>
+<option value="">Select</option>
+<option>TX</option>
+<option>CA</option>
+<option>NY</option>
+<option>FL</option>
+<option>IL</option>
+<option>Other</option>
+</select>
+</td>
+
+<td>Zip Code:</td>
+<td><input type="text" id="zip" maxlength="10" required></td>
+</tr>
+
+<tr>
+<td>Email:</td>
+<td><input type="email" id="email" required></td>
+
+<td>User ID:</td>
+<td><input type="text" id="userId" maxlength="20" required></td>
+</tr>
+
+<tr>
+<td>Password:</td>
+<td><input type="password" id="password" required></td>
+
+<td>Re-enter Password:</td>
+<td><input type="password" id="confirmPassword" required></td>
+</tr>
+
+<tr>
+<td>Gender:</td>
+<td colspan="5">
+<label><input type="radio" name="gender" value="Male"> Male</label>
+<label><input type="radio" name="gender" value="Female"> Female</label>
+<label><input type="radio" name="gender" value="Other"> Other</label>
+</td>
+</tr>
+
+<tr>
+<td>Vaccinated?</td>
+<td colspan="5">
+<label><input type="radio" name="vaccine" value="Yes"> Yes</label>
+<label><input type="radio" name="vaccine" value="No"> No</label>
+</td>
+</tr>
+
+<tr>
+<td>Insurance?</td>
+<td colspan="5">
+<label><input type="radio" name="insurance" value="Yes"> Yes</label>
+<label><input type="radio" name="insurance" value="No"> No</label>
+</td>
+</tr>
+
+<tr>
+<td>Medical History:</td>
+<td colspan="5">
+<label><input type="checkbox" value="Chicken Pox"> Chicken Pox</label>
+<label><input type="checkbox" value="Measles"> Measles</label>
+<label><input type="checkbox" value="COVID-19"> COVID-19</label>
+<label><input type="checkbox" value="Tetanus"> Tetanus</label>
+<label><input type="checkbox" value="Smallpox"> Smallpox</label>
+</td>
+</tr>
+
+<tr>
+<td>Describe Symptoms:</td>
+<td colspan="5">
+<textarea id="symptoms" rows="3" cols="50"></textarea>
+</td>
+</tr>
+
+<tr>
+<td>Health Scale (1–10):</td>
+<td colspan="5">
+<input type="range" id="salary" min="1" max="10" value="5" oninput="updateSlider()">
+<span id="salaryValue">5</span>
+</td>
+</tr>
+
+<tr>
+<td colspan="6" style="text-align:center;">
+<button type="button" onclick="reviewForm()">Review</button>
+<input type="reset" value="CLEAR AND START OVER">
+<input type="submit" value="Submit Registration">
+</td>
+</tr>
+
+</table>
+
+</form>
+
+<div id="reviewSection">
+<h2>PLEASE REVIEW THIS INFORMATION</h2>
+<div id="reviewOutput"></div>
+</div>
+
+</div>
+
+<div id="footer">
+FirstLine Health | Sugar Land, TX
+<br><br>
+<button>Contact Us</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
