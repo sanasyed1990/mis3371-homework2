@@ -1,4 +1,4 @@
-alert("JS is connected");
+
 function updateSlider(){
     let v = document.getElementById("salary").value;
     document.getElementById("salaryValue").innerText = v;
