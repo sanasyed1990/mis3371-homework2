@@ -42,9 +42,24 @@ td {
 }
 
 /* Inputs */
-input, select, textarea {
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 180px;
     padding: 5px;
-    width: 80%;
+}
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+}
+select {
+    width: 120px;
+    padding: 5px;
+}
+
+textarea {
+    width: 400px;
+    padding: 5px;
 }
 
 /* Buttons */
