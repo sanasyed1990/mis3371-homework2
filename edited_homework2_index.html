@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>FirstLine Health - Patient Registration</title>
+<link href="style.css" rel="stylesheet"/>
+<script>
+window.onload = function() {
+    const dateElement = document.getElementById("currentDate");
+    const today = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    dateElement.innerHTML = today.toLocaleDateString(undefined, options);
+};
+</script>
+</head>
+<body>
+<div id="header">
+<div class="header-left">
+<img alt="FLH Logo" class="logo" src="logo.png"/>
+</div>
+<div class="header-center">
+<h1>FirstLine Health</h1>
+</div>
+<div class="header-right" id="currentDate"></div>
+</div>
+<div id="main">
+<h2>Patient Registration Form</h2>
+<form action="thankyou.html" onsubmit="return validatePassword()">
+<table>
+<tr>
+<td>First Name:</td>
+<td><input id="firstName" maxlength="30" required="" type="text"/></td>
+<td>Middle Initial:</td>
+<td><input id="middleInitial" maxlength="1" type="text"/></td>
+<td>Last Name:</td>
+<td><input id="lastName" maxlength="30" required="" type="text"/></td>
+</tr>
+<tr>
+<td>Date of Birth:</td>
+<td><input id="dob" placeholder="MM/DD/YYYY" required="" type="text"/></td>
+<td>Social Security:</td>
+<td><input id="ssn" maxlength="11" required="" type="password"/></td>
+</tr>
+<tr>
+<td>Address Line 1:</td>
+<td><input id="addr1" maxlength="30" required="" type="text"/></td>
+<td>Address Line 2:</td>
+<td><input id="addr2" maxlength="30" type="text"/></td>
+</tr>
+<tr>
+<td>City:</td>
+<td><input id="city" maxlength="30" required="" type="text"/></td>
+<td>State:</td>
+<td>
+<select required="">
+<option value="">Select</option>
+<option>TX</option>
+<option>CA</option>
+<option>NY</option>
+<option>FL</option>
+<option>IL</option>
+<option>Other</option>
+</select>
+</td>
+<td>Zip Code:</td>
+<td><input id="zip" maxlength="10" required="" type="text"/></td>
+</tr>
+<tr>
+<td>Email:</td>
+<td><input id="email" required="" type="email"/></td>
+<td>User ID:</td>
+<td><input id="userId" maxlength="20" required="" type="text"/></td>
+</tr>
+<tr>
+<td>Password:</td>
+<td><input id="password" required="" type="password"/></td>
+<td>Re-enter Password:</td>
+<td><input id="confirmPassword" required="" type="password"/></td>
+</tr>
+<tr>
+<td>Gender:</td>
+<td colspan="5">
+<input name="gender" type="radio"/> Male
+<input name="gender" type="radio"/> Female
+<input name="gender" type="radio"/> Other
+</td>
+</tr>
+<tr>
+<td>Vaccinated?</td>
+<td colspan="5">
+<input name="vaccine" type="radio"/> Yes
+<input name="vaccine" type="radio"/> No
+</td>
+</tr>
+<tr>
+<td>Insurance?</td>
+<td colspan="5">
+<input name="insurance" type="radio"/> Yes
+<input name="insurance" type="radio"/> No
+</td>
+</tr>
+<tr>
+<td>Medical History:</td>
+<td colspan="5">
+<input type="checkbox"/> Chicken Pox
+<input type="checkbox"/> Measles
+<input type="checkbox"/> COVID-19
+<input type="checkbox"/> Tetanus
+<input type="checkbox"/> Smallpox
+</td>
+</tr>
+<tr>
+<td>Describe Symptoms:</td>
+<td colspan="5">
+<textarea cols="50" rows="3"></textarea>
+</td>
+</tr>
+<tr>
+<td>Health Scale (1–10):</td>
+<td colspan="5">
+<input max="10" min="1" type="range"/>
+</td>
+</tr>
+<tr>
+<td colspan="6" style="text-align:center;">
+<input type="reset" value="CLEAR AND START OVER"/>
+<button onclick="reviewForm()" type="button">Review</button><input type="submit" value="Submit Registration"/>
+</td>
+</tr>
+</table>
+</form>
+</div>
+
+<div id="reviewSection">
+<h2>PLEASE REVIEW THIS INFORMATION</h2>
+<div id="reviewOutput"></div>
+</div>
+<div id="footer">
+FirstLine Health | Sugar Land, TX
+<br/><br/>
+<button>Contact Us</button>
+</div>
+<script src="script.js"></script></body>
+</html>
