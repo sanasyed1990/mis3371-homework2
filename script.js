@@ -22,9 +22,13 @@ function reviewForm(){
     let zip = document.getElementById("zip").value;
     let user = document.getElementById("userId").value;
 
-    let gender = document.querySelector('input[name="gender"]:checked')?.value || "";
-    let vaccine = document.querySelector('input[name="vaccine"]:checked')?.value || "";
-    let insurance = document.querySelector('input[name="insurance"]:checked')?.value || "";
+    let genderEl = document.querySelector('input[name="gender"]:checked');
+    let vaccineEl = document.querySelector('input[name="vaccine"]:checked');
+    let insuranceEl = document.querySelector('input[name="insurance"]:checked');
+
+    let gender = genderEl ? genderEl.value : "";
+    let vaccine = vaccineEl ? vaccineEl.value : "";
+    let insurance = insuranceEl ? insuranceEl.value : "";
 
     let history = [];
     document.querySelectorAll('input[type="checkbox"]:checked')
