@@ -1,0 +1,87 @@
+body {
+    font-family: Arial;
+    background: #e6eceb;
+    margin: 0;
+}
+
+#header {
+    background: #0a6b5e;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 150px;
+}
+
+#main {
+    width: 85%;
+    margin: 20px auto;
+    background: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+td {
+    padding: 10px;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 180px;
+}
+
+select {
+    width: 120px;
+}
+
+textarea {
+    width: 400px;
+    height: 80px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+}
+
+/* Buttons */
+button, input[type="submit"], input[type="reset"] {
+    background: #0a6b5e;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+}
+
+/* Review Table */
+.review-table {
+    width: 60%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+}
+
+.review-table th {
+    background: #0a6b5e;
+    color: white;
+    padding: 10px;
+}
+
+.review-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+#footer {
+    background: #0a6b5e;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
