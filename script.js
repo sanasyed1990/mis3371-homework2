@@ -13,6 +13,7 @@ function validatePassword(){
     }
     return true;
 }
+
 function checkYN(value, list){
     return list.includes(value) ? "Y" : "N";
 }
