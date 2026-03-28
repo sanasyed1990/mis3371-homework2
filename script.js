@@ -22,13 +22,10 @@ function reviewForm(){
     let zip = document.getElementById("zip").value;
     let user = document.getElementById("userId").value;
 
-    let genderEl = document.querySelector('input[name="gender"]:checked');
-    let vaccineEl = document.querySelector('input[name="vaccine"]:checked');
-    let insuranceEl = document.querySelector('input[name="insurance"]:checked');
+    let dob = document.querySelector('input[placeholder="MM/DD/YYYY"]').value;
 
-    let gender = genderEl ? genderEl.value : "";
-    let vaccine = vaccineEl ? vaccineEl.value : "";
-    let insurance = insuranceEl ? insuranceEl.value : "";
+    let gender = document.querySelector('input[name="gender"]:checked')?.value || "";
+    let vaccine = document.querySelector('input[name="vaccine"]:checked')?.value || "";
 
     let history = [];
     document.querySelectorAll('input[type="checkbox"]:checked')
@@ -37,22 +34,86 @@ function reviewForm(){
     let symptoms = document.getElementById("symptoms").value;
     let health = document.getElementById("salary").value;
 
+    // VALIDATION
+    let dobCheck = "";
+    if(dob){
+        let inputDate = new Date(dob);
+        let today = new Date();
+        dobCheck = inputDate > today ? 
+        "<span style='color:red'>ERROR: Cannot be in the future</span>" :
+        "<span style='color:green'>pass</span>";
+    }
+
+    let zipCheck = zip ? 
+    "<span style='color:green'>pass</span>" :
+    "<span style='color:red'>ERROR: Missing Zip Code</span>";
+
+    let emailCheck = email.includes("@") ?
+    "<span style='color:green'>pass</span>" :
+    "<span style='color:red'>ERROR: Invalid Email</span>";
+
     document.getElementById("reviewOutput").innerHTML =
-    `<table class="review-table">
-    <tr><th colspan="2">Review Information</th></tr>
+    `<table style="width:100%;">
 
-    <tr><td>Name</td><td>${f} ${l}</td></tr>
-    <tr><td>Email</td><td>${email}</td></tr>
-    <tr><td>Zip</td><td>${zip}</td></tr>
-    <tr><td>User ID</td><td>${user}</td></tr>
+    <tr>
+    <td>First, MI, Last Name</td>
+    <td>${f} ${l}</td>
+    <td style="color:green">pass</td>
+    </tr>
 
-    <tr><td>Gender</td><td>${gender}</td></tr>
-    <tr><td>Vaccinated</td><td>${vaccine}</td></tr>
-    <tr><td>Insurance</td><td>${insurance}</td></tr>
+    <tr>
+    <td>Date of Birth</td>
+    <td>${dob}</td>
+    <td>${dobCheck}</td>
+    </tr>
 
-    <tr><td>Medical History</td><td>${history.join(", ")}</td></tr>
-    <tr><td>Symptoms</td><td>${symptoms}</td></tr>
+    <tr>
+    <td>Email</td>
+    <td>${email}</td>
+    <td>${emailCheck}</td>
+    </tr>
 
-    <tr><td>Health Scale</td><td>${health}</td></tr>
+    <tr>
+    <td>Zip Code</td>
+    <td>${zip}</td>
+    <td>${zipCheck}</td>
+    </tr>
+
+    <tr>
+    <td>User ID</td>
+    <td>${user}</td>
+    <td style="color:green">pass</td>
+    </tr>
+
+    <tr>
+    <td>Gender</td>
+    <td>${gender}</td>
+    <td style="color:green">pass</td>
+    </tr>
+
+    <tr>
+    <td>Vaccinated</td>
+    <td>${vaccine}</td>
+    <td style="color:green">pass</td>
+    </tr>
+
+    <tr>
+    <td>Medical History</td>
+    <td>${history.join(", ")}</td>
+    <td style="color:green">pass</td>
+    </tr>
+
+    <tr>
+    <td>Symptoms</td>
+    <td>${symptoms}</td>
+    <td style="color:green">pass</td>
+    </tr>
+
+    <tr>
+    <td>Health Scale</td>
+    <td>${health}</td>
+    <td style="color:green">pass</td>
+    </tr>
+
     </table>`;
-}
+} 
