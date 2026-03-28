@@ -70,7 +70,6 @@ function reviewForm(){
     // ===== OUTPUT =====
     document.getElementById("reviewOutput").innerHTML =
 
-`<h3>PLEASE REVIEW THIS INFORMATION</h3>
 
 <table style="width:100%;">
 
