@@ -13,7 +13,15 @@ function validatePassword(){
     }
     return true;
 }
+function checkYN(value, list){
+    return list.includes(value) ? "Y" : "N";
+}
 
+function getHealthLevel(val){
+    if(val <= 3) return "LOW";
+    if(val <= 7) return "MEDIUM";
+    return "SEVERE";
+}
 function reviewForm(){
 
     let f = document.getElementById("firstName").value;
