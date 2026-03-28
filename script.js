@@ -1,4 +1,3 @@
-document.getElementById("reviewOutput").innerHTML = "";
 // Update slider value
 function updateSlider(){
     document.getElementById("salaryValue").innerText =
@@ -30,6 +29,7 @@ function getHealthLevel(val){
 }
 
 // ===== REVIEW FUNCTION =====
+document.getElementById("reviewOutput").innerHTML = "";
 function reviewForm(){
 
     let f = document.getElementById("firstName").value;
