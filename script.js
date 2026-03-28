@@ -62,68 +62,77 @@ function reviewForm(){
     "<span style='color:green'>pass</span>" :
     "<span style='color:red'>ERROR: Invalid Email</span>";
 
-    document.getElementById("reviewOutput").innerHTML =
-    `<table style="width:100%;">
+   document.getElementById("reviewOutput").innerHTML =
 
-    <tr>
-    <td>First, MI, Last Name</td>
-    <td>${f} ${l}</td>
-    <td style="color:green">pass</td>
-    </tr>
+`<h3>PLEASE REVIEW THIS INFORMATION</h3>
 
-    <tr>
-    <td>Date of Birth</td>
-    <td>${dob}</td>
-    <td>${dobCheck}</td>
-    </tr>
+<table style="width:100%;">
 
-    <tr>
-    <td>Email</td>
-    <td>${email}</td>
-    <td>${emailCheck}</td>
-    </tr>
+<tr>
+<td>First, MI, Last Name</td>
+<td>${f} ${l}</td>
+<td style="color:green">pass</td>
+</tr>
 
-    <tr>
-    <td>Zip Code</td>
-    <td>${zip}</td>
-    <td>${zipCheck}</td>
-    </tr>
+<tr>
+<td>Date of Birth</td>
+<td>${dob}</td>
+<td>${dobCheck}</td>
+</tr>
 
-    <tr>
-    <td>User ID</td>
-    <td>${user}</td>
-    <td style="color:green">pass</td>
-    </tr>
+<tr>
+<td>Email</td>
+<td>${email}</td>
+<td>${emailCheck}</td>
+</tr>
 
-    <tr>
-    <td>Gender</td>
-    <td>${gender}</td>
-    <td style="color:green">pass</td>
-    </tr>
+<tr>
+<td>Zip Code</td>
+<td>${zip}</td>
+<td>${zipCheck}</td>
+</tr>
 
-    <tr>
-    <td>Vaccinated</td>
-    <td>${vaccine}</td>
-    <td style="color:green">pass</td>
-    </tr>
+<tr>
+<td>User ID</td>
+<td>${user}</td>
+<td style="color:green">pass</td>
+</tr>
 
-    <tr>
-    <td>Medical History</td>
-    <td>${history.join(", ")}</td>
-    <td style="color:green">pass</td>
-    </tr>
+</table>
 
-    <tr>
-    <td>Symptoms</td>
-    <td>${symptoms}</td>
-    <td style="color:green">pass</td>
-    </tr>
+<h3>REQUESTED INFO</h3>
 
-    <tr>
-    <td>Health Scale</td>
-    <td>${health}</td>
-    <td style="color:green">pass</td>
-    </tr>
+<table style="width:100%;">
 
-    </table>`;
-} 
+<tr>
+<td>Chicken Pox</td><td>${checkYN("Chicken Pox", history)}</td>
+<td>Vaccinated?</td><td>${vaccine === "Yes" ? "Y" : "N"}</td>
+</tr>
+
+<tr>
+<td>Measles</td><td>${checkYN("Measles", history)}</td>
+<td>Level of Pain</td><td>${getHealthLevel(parseInt(health))}</td>
+</tr>
+
+<tr>
+<td>COVID-19</td><td>${checkYN("COVID-19", history)}</td>
+<td></td><td></td>
+</tr>
+
+<tr>
+<td>Tetanus</td><td>${checkYN("Tetanus", history)}</td>
+<td></td><td></td>
+</tr>
+
+<tr>
+<td>Smallpox</td><td>${checkYN("Smallpox", history)}</td>
+<td></td><td></td>
+</tr>
+
+</table>
+
+<p><b>Described Symptoms:</b> ${symptoms}</p>
+
+<p><b>User ID:</b> ${user}</p>
+<p><b>Password:</b> ********</p>
+`;
