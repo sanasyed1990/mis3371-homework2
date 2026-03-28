@@ -1,3 +1,4 @@
+document.getElementById("reviewOutput").innerHTML = "";
 // Update slider value
 function updateSlider(){
     document.getElementById("salaryValue").innerText =
