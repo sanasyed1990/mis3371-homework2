@@ -1,3 +1,4 @@
+alert("NEW JS LOADED");
 function updateSlider(){
     document.getElementById("salaryValue").innerText =
     document.getElementById("salary").value;
