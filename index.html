@@ -78,18 +78,38 @@ window.onload = function() {
 
 <tr>
 <td>Email:</td>
-<td><input type="email" id="email"></td>
+<td><input type="text"
+id="email"
+oninput="validateEmail()">
+
+<span class="error"
+id="emailError"></span></td>
 
 <td>User ID:</td>
-<td><input type="text" id="userId"></td>
+<td><input type="text"
+id="userId"
+oninput="validateUserID()">
+
+<span class="error"
+id="userIdError"></span></td>
 </tr>
 
 <tr>
 <td>Password:</td>
-<td><input type="password" id="password"></td>
+<td><input type="password"
+id="password"
+oninput="validatePasswordStrength()">
+
+<span class="error"
+id="passwordError"></span></td>
 
 <td>Re-enter Password:</td>
-<td><input type="password" id="confirmPassword"></td>
+<td><input type="password"
+id="confirmPassword"
+oninput="validatePasswordMatch()">
+
+<span class="error"
+id="confirmPasswordError"></span></td>
 </tr>
 
 <tr>
